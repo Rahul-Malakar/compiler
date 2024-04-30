@@ -1,0 +1,146 @@
+%{
+#include <stdio.h>
+int lines=1;
+int splch=0;
+int words=0;
+int letters=0;
+%}
+
+%option noyywrap
+%% 
+\n {lines++;}
+[a-zA-Z]+ {words++;letters+=yyleng;}   
+[!@#$%^&*]   {splch++;}
+. { }
+%%
+
+int main() {
+    yylex();
+    printf("No of Lines : %d\n",lines);
+    printf("No of Letters : %d\n",letters);
+    printf("No of Special Characters : %d\n",splch);
+    printf("No of Words : %d\n",words);
+    return 0;
+}
+
+
+
+
+// vowel and cons
+
+%{
+#include <stdio.h>
+int vow=0;
+int cons=0;
+%}
+
+%option noyywrap
+%%  
+[aAeEiIoOuU] {vow++;}
+[a-zA-Z] {cons++;}
+.|\n|\s { }
+%%
+
+int main() {
+    yylex();
+    printf("No of Vowels : %d\n",vow); 
+    printf("No of Consonants : %d\n",cons); 
+    return 0;
+}
+
+
+
+
+// terminal seh uthake kahi aur pehkna hai
+// niche wale ko
+%{
+#include <stdio.h>
+#include <ctype.h>
+int lines=1;
+int splch=0;
+int words=0;
+int letters=0;
+%}
+
+%option noyywrap
+%% 
+int|main|return|include|float|char|"for"                 {
+    for(int i=0;i<yyleng;i++){
+        yytext[i]=toupper(yytext[i]);
+    }
+    printf("%s",yytext);
+}
+[a-zA-Z]+ {printf("%s",yytext);}
+. {printf("%s",yytext);}
+%%
+
+int main() {
+    yylex(); 
+    return 0;
+}
+
+
+
+
+
+
+// pali count
+
+%{
+#include <stdio.h>
+#include <ctype.h>
+#include <stdbool.h>
+int pali=0; 
+bool hoga=true;
+%}
+
+%option noyywrap
+%%  
+[a-zA-Z]+ { 
+    for(int i=0;i<yyleng;i++){
+        if(yytext[i]!=yytext[yyleng-i-1]){
+            hoga=false;
+        }
+    }
+    if(hoga)pali++;
+    hoga=1; 
+} 
+.|\n { }
+%%
+
+int main() {
+    yylex(); 
+    printf("%d\n",pali);
+    return 0;
+}
+
+// count repeated characters
+%{
+#include <stdio.h>
+#include <ctype.h>
+#include <stdbool.h>
+int freq[300];
+%}
+
+%option noyywrap
+%%   
+. {
+    if(yytext[0]<255){
+        freq[yytext[0]]++;
+    }
+}
+%%
+
+int main() {
+    yylex(); 
+    for(int i=0;i<(sizeof(freq)/sizeof(int));i++){
+        if(freq[i]>1 && i!=32){
+            printf("%c\n",i);
+        }
+    }
+    return 0;
+}
+
+
+
+
