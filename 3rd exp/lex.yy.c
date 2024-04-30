@@ -351,8 +351,8 @@ static void yynoreturn yy_fatal_error ( const char* msg  );
 	(yy_hold_char) = *yy_cp; \
 	*yy_cp = '\0'; \
 	(yy_c_buf_p) = yy_cp;
-#define YY_NUM_RULES 5
-#define YY_END_OF_BUFFER 6
+#define YY_NUM_RULES 3
+#define YY_END_OF_BUFFER 4
 /* This struct is not used in this scanner,
    but its presence is necessary. */
 struct yy_trans_info
@@ -362,26 +362,26 @@ struct yy_trans_info
 	};
 static const flex_int16_t yy_accept[13] =
     {   0,
-        0,    0,    6,    5,    2,    1,    4,    3,    2,    4,
-        3,    0
+        0,    0,    4,    3,    3,    0,    1,    0,    0,    1,
+        2,    0
     } ;
 
 static const YY_CHAR yy_ec[256] =
     {   0,
-        1,    1,    1,    1,    1,    1,    1,    1,    2,    3,
+        1,    1,    1,    1,    1,    1,    1,    1,    1,    2,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
-        1,    1,    4,    1,    4,    4,    4,    4,    1,    4,
-        4,    4,    1,    1,    1,    1,    4,    1,    1,    1,
-        1,    1,    1,    1,    1,    1,    1,    1,    4,    1,
-        1,    1,    4,    4,    5,    5,    5,    5,    5,    5,
-        5,    5,    5,    5,    5,    5,    5,    5,    5,    5,
-        5,    5,    5,    5,    5,    5,    5,    5,    5,    5,
-        4,    1,    4,    4,    4,    1,    5,    5,    5,    5,
+        1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
+        1,    3,    1,    1,    1,    1,    4,    1,    1,    1,
+        1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
+        1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
+        1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
+        1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
+        1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
 
-        5,    5,    5,    5,    5,    5,    5,    5,    5,    5,
-        5,    5,    5,    5,    5,    5,    5,    5,    5,    5,
-        5,    5,    4,    4,    4,    1,    1,    1,    1,    1,
+        1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
+        1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
+        1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
@@ -398,33 +398,33 @@ static const YY_CHAR yy_ec[256] =
         1,    1,    1,    1,    1
     } ;
 
-static const YY_CHAR yy_meta[6] =
+static const YY_CHAR yy_meta[5] =
     {   0,
-        1,    2,    3,    3,    4
+        1,    2,    1,    1
     } ;
 
 static const flex_int16_t yy_base[16] =
     {   0,
-        0,    0,    9,   10,    0,    0,    0,    0,    0,    0,
-        0,   10,    6,    4,    2
+        8,    7,   10,   13,    0,    6,    0,    5,    3,    0,
+        0,   13,    4,    1,    0
     } ;
 
 static const flex_int16_t yy_def[16] =
     {   0,
-       12,    1,   12,   12,   13,   14,   14,   15,   13,   14,
-       15,    0,   12,   12,   12
+       13,   13,   12,   12,   12,   14,   15,   14,    8,   15,
+        8,    0,   12,   12,   12
     } ;
 
-static const flex_int16_t yy_nxt[16] =
+static const flex_int16_t yy_nxt[18] =
     {   0,
-        4,    5,    6,    7,    8,   11,   10,    9,   12,    3,
-       12,   12,   12,   12,   12
+       10,    8,    6,    7,    4,    4,   11,    9,    9,   12,
+        5,    5,    3,   12,   12,   12,   12
     } ;
 
-static const flex_int16_t yy_chk[16] =
+static const flex_int16_t yy_chk[18] =
     {   0,
-        1,    1,    1,    1,    1,   15,   14,   13,    3,   12,
-       12,   12,   12,   12,   12
+       15,   14,    5,    5,   13,   13,    9,    8,    6,    3,
+        2,    1,   12,   12,   12,   12,   12
     } ;
 
 static yy_state_type yy_last_accepting_state;
@@ -441,16 +441,11 @@ int yy_flex_debug = 0;
 #define YY_MORE_ADJ 0
 #define YY_RESTORE_YY_MORE_OFFSET
 char *yytext;
-#line 1 "first.l"
-#line 2 "first.l"
-/* Definitions */
-#include<stdio.h>
-int num_lines = 1;
-int num_words = 0;
-int num_special_chars = 0;
-int num_letters = 0;
-#line 453 "lex.yy.c"
-#line 454 "lex.yy.c"
+#line 1 "second.l"
+#line 2 "second.l"
+int commentCount = 0;
+#line 448 "lex.yy.c"
+#line 449 "lex.yy.c"
 
 #define INITIAL 0
 
@@ -667,10 +662,10 @@ YY_DECL
 		}
 
 	{
-#line 10 "first.l"
+#line 7 "second.l"
 
 
-#line 674 "lex.yy.c"
+#line 669 "lex.yy.c"
 
 	while ( /*CONSTCOND*/1 )		/* loops until end-of-file is reached */
 		{
@@ -703,7 +698,7 @@ yy_match:
 			yy_current_state = yy_nxt[yy_base[yy_current_state] + yy_c];
 			++yy_cp;
 			}
-		while ( yy_base[yy_current_state] != 10 );
+		while ( yy_base[yy_current_state] != 13 );
 
 yy_find_action:
 		yy_act = yy_accept[yy_current_state];
@@ -728,33 +723,21 @@ do_action:	/* This label is used only to access EOF actions. */
 			goto yy_find_action;
 
 case 1:
-/* rule 1 can match eol */
 YY_RULE_SETUP
-#line 12 "first.l"
-{ num_lines++; }
+#line 9 "second.l"
+{commentCount++}
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 13 "first.l"
-;
+#line 10 "second.l"
+{commentCount++}
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 14 "first.l"
-{ num_words++; num_letters += strlen(yytext); }
-	YY_BREAK
-case 4:
-/* rule 4 can match eol */
-YY_RULE_SETUP
-#line 15 "first.l"
-{ num_special_chars += strlen(yytext); }
-	YY_BREAK
-case 5:
-YY_RULE_SETUP
-#line 17 "first.l"
+#line 12 "second.l"
 ECHO;
 	YY_BREAK
-#line 758 "lex.yy.c"
+#line 741 "lex.yy.c"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -1759,33 +1742,12 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 17 "first.l"
+#line 12 "second.l"
 
 
-int main(int argc, char *argv[]) {
-    
-    if (argc != 2) {
-        printf("Usage: %s <input_file>\n", argv[0]);
-        return 1;
-    }
-    FILE *file = fopen(argv[1], "r");
-    if (!file) {
-        printf("Error opening file.\n");
-        return 1;
-    }
-    yyin = file;
-
-    
+int main() {
     yylex();
-
- 
-    printf("Number of lines: %d\n", num_lines);
-    printf("Number of words: %d\n", num_words);
-    printf("Number of special characters: %d\n", num_special_chars);
-    printf("Number of letters: %d\n", num_letters);
-
-
-    fclose(file);
-
+    printf("\nNumber of comments: %d\n", commentCount);
     return 0;
 }
+

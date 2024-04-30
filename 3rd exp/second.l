@@ -2,18 +2,12 @@
 int commentCount = 0;
 %}
 
-%option noyywrap
+
 
 %%
 
-"/*"    { commentCount++; int c;
-          while ((c = input()) != '*' || (c = input()) != '/')
-            ;
-        }
-"//"    { commentCount++; int c;
-          while ((c = input()) != '\n')
-            ;
-        }
+"//"(.)* {commentCount++}
+"/*"(.)*"*/" {commentCount++}
 
 %%
 
